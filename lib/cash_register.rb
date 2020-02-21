@@ -9,6 +9,7 @@ class CashRegister
   def total
     if @discount == nil
       @discount = 0.0
+    end
     @total = @total - (@total * (@discount*0.01))
     @total
   end
