@@ -17,7 +17,7 @@ class CashRegister
     if @employee_discount = nil
       puts "There no discount to apply"
     else
-      @total = @employee_discount.to_f * 0.01 * @total
+      @total = @employee_discount.to_f * 0.01 * @new_total.sum
     end
   end
   
@@ -26,6 +26,8 @@ class CashRegister
   end
   
   def void_last_transaction
-    @new_total = @new_total
+    @total = @new_total.sum - @new_total[@new_total.length-1]
+    @total
+  end
       
 end
