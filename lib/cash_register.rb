@@ -10,7 +10,7 @@ class CashRegister
     @new_total = []
     @item = []
     @total += (price*quantity)
-    @new_total.push(price * quantity)
+    @new_total.push(price.to_i.to_f * quantity.to_i.to_f)
     @item.push(title * quantity)
   end
   
@@ -18,12 +18,12 @@ class CashRegister
     if @discount = nil
       puts "There no discount to apply"
     else
-      @total = @discount * 0.01 * @new_total.sum
+      @total = @discount.to_i.to_f * 0.01 * @new_total.sum
     end
   end
   
   def item
-    @@item
+    @item
   end
   
   def void_last_transaction
