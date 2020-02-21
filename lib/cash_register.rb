@@ -1,11 +1,11 @@
 class CashRegister
-  attr_accessor :total
+  attr_accessor :total, :discount
   @@item = []
   @@new_total = []
   
-  def initialize(discount=100)
+  def initialize(discount=nil)
     @total = 0
-    @employee_discount = discount
+    @discount = discount
   end
   
   def add_item(title, price)
@@ -14,10 +14,10 @@ class CashRegister
   end
   
   def apply_discount
-    if @employee_discount = nil
+    if @discount = nil
       puts "There no discount to apply"
     else
-      @total = @employee_discount.to_f * 0.01 * @new_total.sum
+      @total = @discount.to_f * 0.01 * @new_total.sum
     end
   end
   
