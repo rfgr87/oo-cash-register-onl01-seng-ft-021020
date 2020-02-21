@@ -7,7 +7,7 @@ class CashRegister
   end
   
   def total
-    if @discount = nil
+    if @discount == nil
       @discount = 0.0
     @total = @total - (@total * (@discount*0.01))
     @total
@@ -22,7 +22,7 @@ class CashRegister
   end
   
   def apply_discount
-    if @discount = nil
+    if @discount == nil
       puts "There no discount to apply"
     else
       @total = @total - (@total * (@discount * 0.01))
