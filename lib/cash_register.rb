@@ -3,7 +3,7 @@ class CashRegister
   @@item = []
   @@new_total = []
   
-  def initialize(discount)
+  def initialize(discount=0)
     @total = 0
     @employee_discount = discount
   end
