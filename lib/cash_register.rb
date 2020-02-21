@@ -4,13 +4,13 @@ class CashRegister
   @new_total = []
   
   def initialize(discount=nil)
-    @total = 0
+    @total = 0.0
     @discount = discount
   end
   
   def add_item(title, price, quantity=1)
-    @new_total << price * quantity
-    @total = @new_total.sum
+    @total = @total + (price.to_f*qunatity.to_f)
+    @new_total << (price.to_f * quantity.to_f)
     @item << title * quantity
   end
   
