@@ -11,6 +11,6 @@ class CashRegister
   end
   
   def apply_discount
-    @new_total = @employee_discount * 0.01
+    @new_total = @employee_discount.to_f * 0.01
   
 end
