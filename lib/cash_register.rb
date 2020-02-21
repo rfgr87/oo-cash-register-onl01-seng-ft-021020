@@ -18,7 +18,7 @@ class CashRegister
     if @discount = nil
       puts "There no discount to apply"
     else
-      @total = @discount.to_f * 0.01 * @new_total.to_f.sum
+      @total = @discount * 0.01 * @new_total.sum
     end
   end
   
