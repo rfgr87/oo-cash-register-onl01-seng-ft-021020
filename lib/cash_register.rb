@@ -19,15 +19,20 @@ class CashRegister
     @item = []
     @total += (price*quantity)
     @new_total.push(price.to_i.to_f * quantity.to_i.to_f)
-    @item.push(title * quantity)
+    i = 0
+    while i < quantity
+      @item.push(title)
+    end
+    
   end
   
   def apply_discount
-    if @discount == nil
-      puts "There no discount to apply"
+    if @discount == nil || @discount == 0.0
+      puts "There is no discount to apply."
     else
       @total = @total - (@total * (@discount * 0.01))
       @total
+      puts "After the discount, the total comes to $#{@total}."
     end
   end
   
