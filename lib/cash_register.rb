@@ -6,6 +6,13 @@ class CashRegister
     @discount = discount
   end
   
+  def total
+    if @discount = nil
+      @discount = 0.0
+    @total = @total - (@total * (@discount*0.01))
+    @total
+  end
+  
   def add_item(title=nil, price=0.0, quantity=1)
     @new_total = []
     @item = []
@@ -18,7 +25,8 @@ class CashRegister
     if @discount = nil
       puts "There no discount to apply"
     else
-      @total = @discount.to_i.to_f * 0.01 * @new_total.sum
+      @total = @total - (@total * (@discount * 0.01))
+      @total
     end
   end
   
