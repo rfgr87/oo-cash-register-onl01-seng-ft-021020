@@ -14,11 +14,11 @@ class CashRegister
     @total
   end
   
-    @new_total = []
-    @item = []
+    new_total = []
+    item = []
   def add_item(title=nil, price=0.0, quantity=1)
-    @total += (price*quantity)
-    @new_total.push(price.to_i.to_f * quantity.to_i.to_f)
+    total += (price*quantity)
+    new_total.push(price.to_i.to_f * quantity.to_i.to_f)
     i = 0
     while i < quantity
       @item.push(title)
