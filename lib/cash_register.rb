@@ -20,7 +20,6 @@ class CashRegister
   
     
   def add_item(title=nil, price=0.0, quantity=1)
-    binding.pry
     @total += (price*quantity)
     @new_total = (price.to_f * quantity.to_f)
     i = 0
