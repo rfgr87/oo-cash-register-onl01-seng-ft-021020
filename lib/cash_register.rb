@@ -21,7 +21,8 @@ class CashRegister
     
   def add_item(title=nil, price=0.0, quantity=1)
     @total += (price*quantity)
-    @new_total << (price * quantity)
+    @new_total = (price*quantity)
+    #@new_total << (price * quantity)
     i = 0
     while i < quantity
       @item << (title)
@@ -34,7 +35,7 @@ class CashRegister
     if @discount == nil || @discount == 0.0
       return "There is no discount to apply."
     else
-      @total = @total - (@total * (@discount * 0.01))
+      @total = @total - (@total * (@discount/100))
       @total
       return "After the discount, the total comes to $#{@total}."
     end
