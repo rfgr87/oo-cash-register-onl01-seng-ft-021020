@@ -14,7 +14,7 @@ class CashRegister
     if @discount == nil
       @discount = 0.0
     end
-    @total = @total - (@total * (@discount*0.01))
+    @total = @total - (@total * (@discount/100))
     @total
   end
   
